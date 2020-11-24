@@ -4,15 +4,6 @@ import { Container, Row, Col, Carousel } from "react-bootstrap";
 import { DishComments } from "./DishComments";
 
 class Home extends Component {
-  state = {
-    selectedDish: null,
-  };
-
-  selectNewDish = (dish) => {
-    // console.log("Dish selected", dish);
-    this.setState({ selectedDish: dish });
-  };
-
   render() {
     return (
       <Container>
@@ -29,7 +20,7 @@ class Home extends Component {
                     className="d-block w-100"
                     src={item.image}
                     alt={item.name}
-                    onClick={() => this.selectNewDish(item)}
+                    onClick={() => this.props.history.push('/details/' + item.id)}
                   />
                   <Carousel.Caption>
                     <h3>{item.name}</h3>
