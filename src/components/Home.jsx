@@ -41,9 +41,6 @@ class Home extends Component {
             </Carousel>
           </Col>
         </Row>
-        <Row>
-          <DishComments selectedDish={this.state.selectedDish} />
-        </Row>
       </Container>
     );
   }

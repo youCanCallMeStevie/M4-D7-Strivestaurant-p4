@@ -7,6 +7,7 @@ import NavBar from './components/NavBar'
 import Home from './components/Home'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Reservations from './components/Reservations'
+import DishDetails from './components/DishDetails'
 
 class App extends React.Component {
   render() {
@@ -14,8 +15,18 @@ class App extends React.Component {
       <>
         <Router>
           <NavBar title="Strivestaurant" />
-          <Route path="/" exact component={Home} />
+          <Route
+            path="/"
+            exact
+            // render={(props) => (
+            //   <Home title="Stefano" history={props.history} location={props.location} match={props.match} />
+            // )}
+            render={(
+              props // props are history, location, match
+            ) => <Home title="Stefano" {...props} />}
+          />
           <Route path="/reservation" exact component={Reservations} />
+          <Route path="/details/:id" component={DishDetails} />
         </Router>
       </>
     )
