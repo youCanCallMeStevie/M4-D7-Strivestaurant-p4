@@ -1,24 +1,24 @@
 [
   {
     "id": 0,
-    "name": "Carbonara",
+    "name": "Sexy Carbonara",
     "image": "assets/images/carbonara.jpg",
     "category": "mains",
-    "label": "Fat",
+    "label": "extra Sexy",
     "price": "7.99",
-    "description": "Pasta with Guanciale (a kind of bacon), Pecorino (sheep cheese), Pepper, Salt and Eggs.",
+    "description": "Pasta with Sexy Beast (a kind of bacon but sexy), Pecorino (sheep cheese), Pepper, Salt and Eggs.",
     "comments": [
       {
         "id": 0,
         "rating": 5,
-        "comment": "Wow! One of the best pasta I ever had!",
+        "comment": "DI MOLTO",
         "author": "Tobia De Angelis",
         "date": "2020-10-16T17:57:28.556094Z"
       },
       {
         "id": 1,
         "rating": 5,
-        "comment": "Awesome!",
+        "comment": "FINGER LICKIN GOOD!",
         "author": "Diego Banovaz",
         "date": "2020-10-16T17:57:28.556094Z"
       }

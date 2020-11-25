@@ -5,22 +5,23 @@ import allTheDishes from '../data/menu.json'
 
 class DishDetails extends React.Component {
     state = {
-        dish: null
+        dish: null,
+        loading: true,
     }
 
     componentDidMount() {
         let dishIdFromTheSearchBar = this.props.match.params.stefano;
         let correctDishToLoad = allTheDishes.find(dish => dish.id.toString() === dishIdFromTheSearchBar)
-        this.setState({
-            dish: correctDishToLoad
-        })
+        setTimeout(() => {
+            this.setState({dish: correctDishToLoad, loading: false }); //after the fetch is completed, and we have the info the info we are asking for, we are reverting the loading state
+          }, 1000);
     }
 
     render() {
         return (
             <Container>
-                {this.state.dish &&
-                    <div>
+                {this.state.dish ?
+                    (<div>
                         <Row className="my-2">
                             <Col md={3}>
                                 <img src={'/' + this.state.dish.image} alt="dish" className="img-fluid" />
@@ -40,8 +41,8 @@ class DishDetails extends React.Component {
                             </Col>
                         </Row>
                         <DishComments selectedDish={this.state.dish} />
-                    </div>}
-                {!this.state.dish && <h1>LOADING</h1>}
+                    </div>) :
+                (<h1>LOADING</h1>)}
             </Container>
         )
     }

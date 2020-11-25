@@ -1,11 +1,18 @@
-import React from "react";
+import React, { Component } from "react";
 import dishes from "../data/menu.json";
 import SingleDish from "./SingleDish.jsx";
-import { Container } from "react-bootstrap";
+import { Container, Alert } from "react-bootstrap";
 
 const Menu = () => (
   <Container>
-    {dishes && dishes.map((dish) => <SingleDish dish={dish} key={dish.id} />)}
+    {" "}
+    {dishes.length === 0 ? (
+      <Alert variant="danger">Work In Progress</Alert>
+    ) : (
+      dishes.map(dish => <SingleDish dish={dish} key={dish.id} />)
+    )}
+    ;
   </Container>
 );
+
 export default Menu;
