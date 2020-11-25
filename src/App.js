@@ -1,13 +1,14 @@
-import React from 'react'
+import React from "react";
 
-import 'bootstrap/dist/css/bootstrap.min.css'
-import './App.css'
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 
-import NavBar from './components/NavBar'
-import Home from './components/Home'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
-import Reservations from './components/Reservations'
-import DishDetails from './components/DishDetails'
+import NavBar from "./components/NavBar";
+import Home from "./components/Home";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Reservations from "./components/Reservations";
+import DishDetails from "./components/DishDetails";
+import Menu from "./components/Menu";
 
 class App extends React.Component {
   render() {
@@ -25,12 +26,13 @@ class App extends React.Component {
               props // props are history, location, match
             ) => <Home title="Stefano" {...props} />} // in this way you can pass your own props along with the router ones
           />
+          <Route path="/menu" exact component={Menu} />
           <Route path="/reservation" exact component={Reservations} />
           <Route path="/details/:stefano" component={DishDetails} />
         </Router>
       </>
-    )
+    );
   }
 }
 
-export default App
+export default App;
