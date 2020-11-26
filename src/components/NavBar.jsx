@@ -19,6 +19,12 @@ export class NavBar extends Component {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ml-auto">
+            {this.props.location.pathname === "/details/2" && (
+                <Link className="nav-link active" to="/details/2">
+                  My favorite!
+                </Link>
+              )} 
+              
               <Link to="/menu">
                 <div
                   className={

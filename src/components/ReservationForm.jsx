@@ -1,5 +1,5 @@
 import React from "react";
-import { Alert, Button, Col, Form, Row, Spinner } from "react-bootstrap";
+import { Alert, Button, Col, Form, Row } from "react-bootstrap";
 
 class ReservationForm extends React.Component {
   state = {
@@ -76,17 +76,15 @@ class ReservationForm extends React.Component {
 
   render() {
     let response;
-    if (this.state.errMessage ) {
-      return (
-        <Alert variant="danger">
-          We encountered a problem with your request
-          {this.state.errMessage}
-        </Alert>
-      );
+    if (this.state.errMessage) {
+      return <Alert variant="danger">
+        We encountered a problem with your request
+        {this.state.errMessage}
+      </Alert>;
       // assign the alert jsx value to the response variable
     } else {
       // assign the form jsx value to the response variable
-      <Form className="w-100 mb-5" onSubmit={this.submitReservation}>
+      return <Form className="w-100 mb-5" onSubmit={this.submitReservation}>
         <Row>
           <Col md={6}>
             <Form.Group>
@@ -189,12 +187,7 @@ class ReservationForm extends React.Component {
         <Button type="submit">Submit</Button>
       </Form>;
     }
-
-    return (
-
-        {response}
-      </div>
-    );
+    return (response);
   }
 }
 

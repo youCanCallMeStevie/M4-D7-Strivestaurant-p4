@@ -28,7 +28,7 @@ class App extends React.Component {
           />
           <Route path="/menu" exact component={Menu} />
           <Route path="/reservation" render={(props) => <Reservations {...props} header="Title From App.js"/>}/>
-          <Route path="/details/:stefano" component={DishDetails} />
+          <Route path="/details/:stefano" render={(props) => <DishDetails {...props} checkFav="This is My Favourite"/>} />
         </Router>
       </>
     );
